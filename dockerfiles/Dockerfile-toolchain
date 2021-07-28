@@ -142,7 +142,7 @@ RUN curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash - \
 # RUN sudo ln -sf /usr/share/zoneinfo/UTC /etc/localtime
 
 # --- Build and install capnproto go compiler
-# This package was particularly tricky to get to install correctly for the version of go we use.
+# This package was particularly tricky to get to install correctly because of how the package's source code is structured.
 # To work around this, we install it as a dependency for a local go module and build the binary from the GOPATH.
 RUN mkdir tmp \
     && cd tmp \
