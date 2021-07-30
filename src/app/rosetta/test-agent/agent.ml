@@ -151,8 +151,8 @@ let verify_in_mempool_and_block ~logger ~rosetta_uri ~graphql_uri
             `Failed
         | Ok (Some block) ->
             `Succeeded block )
-      ~retry_count:40 ~initial_delay:(Span.of_ms 500.0)
-      ~each_delay:(Span.of_ms 1000.0)
+      ~retry_count:20 ~initial_delay:(Span.of_ms 250.0)
+      ~each_delay:(Span.of_ms 500.0)
       ~failure_reason:"Took too long for a block to be created"
   in
   [%log debug]
